@@ -24,7 +24,11 @@ int partition(vector<int>&arr , int low , int high)
     return j;
     
 }
-
+int randomized_partition(vector<int>& arr, int low, int high) {
+    int random_index = low + rand() % (high - low + 1); // Choose a random index
+    swap(arr[low], arr[random_index]); // Swap it with the first element
+    return partition(arr, low, high);
+}
 // Recursive quicksort function using randomized partition
 void randomized_quicksort(vector<int>& arr, int low, int high) {
     if (low < high) {
