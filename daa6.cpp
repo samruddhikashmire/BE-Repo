@@ -25,6 +25,14 @@ int partition(vector<int>&arr , int low , int high)
     
 }
 
+// Recursive quicksort function using randomized partition
+void randomized_quicksort(vector<int>& arr, int low, int high) {
+    if (low < high) {
+        int pivot = randomized_partition(arr, low, high);
+        randomized_quicksort(arr, low, pivot - 1);
+        randomized_quicksort(arr, pivot + 1, high);
+    }
+}
 void qs(vector<int>&a , int low , int high)
 {
     if(low < high)
